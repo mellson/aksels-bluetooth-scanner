@@ -54,7 +54,7 @@ function App() {
         {/* Header */}
         <div className="flex items-center justify-center mb-8 pt-8">
           <Bluetooth className="w-8 h-8 text-blue-600 mr-3" />
-          <h1 className="text-3xl font-bold text-gray-800">Aksels Bluetooth Scanner</h1>
+          <h1 className="text-3xl font-bold text-gray-800">Aksel Bluetooth Scanner</h1>
         </div>
 
         {/* Main Content */}
@@ -67,8 +67,8 @@ function App() {
                 flex items-center px-6 py-3 rounded-lg text-white font-medium
                 transition-all duration-200 transform hover:scale-105
                 ${isScanning 
-                  ? 'bg-gray-400 cursor-not-allowed' 
-                  : 'bg-blue-600 hover:bg-blue-700 active:bg-blue-800'
+                  ? 'bg-green-400 cursor-not-allowed' 
+                  : 'bg-green-600 hover:bg-red-700 active:bg-green-800'
                 }
               `}
             >
@@ -86,16 +86,16 @@ function App() {
             </button>
 
             {error && (
-              <div className="flex items-center text-red-600 bg-red-50 px-4 py-2 rounded-lg">
+              <div className="flex items-center text-green-600 bg-green-50 px-4 py-2 rounded-lg">
                 <ShieldAlert className="w-5 h-5 mr-2" />
                 {error}
               </div>
             )}
 
             {!error && devices.length === 0 && !isScanning && (
-              <div className="flex items-center text-gray-600 bg-gray-50 px-4 py-2 rounded-lg">
+              <div className="flex items-center text-green-600 bg-green-50 px-4 py-2 rounded-lg">
                 <Shield className="w-5 h-5 mr-2" />
-                No devices found yet. Click scan to start searching.
+                 Click scan to start searching.
               </div>
             )}
           </div>
@@ -103,23 +103,23 @@ function App() {
           {/* Device List */}
           {devices.length > 0 && (
             <div className="mt-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">Found Devices</h2>
+              <h2 className="text-xl font-semibold text-green-800 mb-4">Found Devices</h2>
               <div className="space-y-3">
                 {devices.map((device, index) => (
                   <div
                     key={device.device.id}
-                    className="flex items-center justify-between bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors"
+                    className="flex items-center justify-between bg-green-50 p-4 rounded-lg hover:bg-green-100 transition-colors"
                   >
                     <div className="flex items-center">
-                      <Bluetooth className="w-5 h-5 text-blue-600 mr-3" />
+                      <Bluetooth className="w-5 h-5 text-green-600 mr-3" />
                       <div>
-                        <h3 className="font-medium text-gray-800">
+                        <h3 className="font-medium text-green-800">
                           {device.device.name || 'Unknown Device'}
                         </h3>
-                        <p className="text-sm text-gray-600">ID: {device.device.id}</p>
+                        <p className="text-sm text-green-600">ID: {device.device.id}</p>
                       </div>
                     </div>
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-green-600">
                       Signal: {device.rssi} dBm
                     </span>
                   </div>
@@ -130,7 +130,7 @@ function App() {
         </div>
 
         {/* Info Card */}
-        <div className="bg-blue-50 rounded-lg p-4 text-sm text-blue-800">
+        <div className="bg-blue-50 rounded-lg p-4 text-sm text-green-800">
           <p>
             Note: Due to security reasons, Bluetooth scanning requires user interaction
             and will show a browser prompt to select devices. Some browsers may have
