@@ -1,3 +1,3 @@
 # aksels-bluetooth-scanner
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/mellson/aksels-bluetooth-scanner)
+Intern project made by [AkselMellson](https://github.com/AkselMellson)
